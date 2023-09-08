@@ -1,16 +1,26 @@
+import os
 import readchar
-print("Inserte su nombre por favor")
-nombre=input()
-print("Bienvenido "+ nombre + " al laberinto de la anaconda")
 
-while True:
-   key = readchar.readkey()
-   print(f"Tecla presionada: {key}")
-   if key == readchar.key.UP:
-         print("Se presionó la tecla de flecha hacia arriba. Saliendo del bucle.")
-         break
+def borrar_y_mostrar_numero(i):
+    os.system('cls' if os.name == 'nt' else 'clear')
+    if i==50:
+         print("Se conto 50 veces, finalizacion del prorgama")
+   
+    else:
+         print(f"Número: {i}")
     
-#Para esta sección del proyecto integrador necesitaremos aprender a manipular la terminal:
+
+i= 0
+
+while i <= 50:
+    # Espera a que se presione la tecla "n"
+    
+    key = readchar.readkey()
+    
+    if key == 'n':
+        borrar_y_mostrar_numero(i)
+        i += 1
+
 
 #Iniciar con un número en 0, leer la tecla `n` del teclado en un bucle, por cada presionada, borrar la terminal y e imprimir el nuevo número hasta el número 50.
 
